@@ -10,7 +10,10 @@
 
 ## Phase 2: Distribution and Final Release
 - [x] Task: Review and finalize the changelog or release notes for the Golden Release. b56df90
-- [ ] Task: Execute `npm publish` to publish the extension to the npm registry.
+- [~] Task: Execute `npm publish` to publish the extension to the npm registry.
 - [ ] Task: Create a new GitHub Release with the tag `v1.0.0` and upload the packaged artifacts from the `dist/` directory (if applicable, or trigger the existing GitHub Action for release).
 - [ ] Task: Verify the public availability of the extension on npm and the GitHub repository.
 - [ ] Task: Conductor - User Manual Verification 'Distribution and Final Release' (Protocol in workflow.md)
+
+## Phase: Review Fixes
+- [x] Task: Apply review suggestions (fix GEMINI.md for tool/skill discovery) 21cce6fd
