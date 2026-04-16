@@ -4,7 +4,7 @@
   "description": "A Gemini CLI extension specialized in creating diagrams and architectures using Mermaid.",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/carlosbarbero/mermaid-extension.git"
+    "url": "git+https://github.com/carlosrgomes/mermaid-extension.git"
   },
   "keywords": [
     "gemini-cli-extension",
@@ -12,7 +12,7 @@
     "mermaid",
     "diagrams"
   ],
-  "homepage": "https://github.com/carlosbarbero/mermaid-extension#readme",
+  "homepage": "https://github.com/carlosrgomes/mermaid-extension#readme",
   "main": "index.js",
   "directories": {
     "test": "tests"
