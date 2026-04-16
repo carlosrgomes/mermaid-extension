@@ -1,7 +1,7 @@
 # Implementation Plan
 
 ## Phase 1: Project Scaffolding
-- [ ] Task: Initialize Node.js project and install dependencies (TypeScript, Jest, Mermaid CLI)
+- [~] Task: Initialize Node.js project and install dependencies (TypeScript, Jest, Mermaid CLI)
     - [ ] Write Tests: Set up initial test suite structure
     - [ ] Implement Feature: Configure `package.json`, `tsconfig.json`, and ESLint/Prettier
 - [ ] Task: Setup Gemini CLI extension boilerplate
