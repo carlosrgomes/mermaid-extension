@@ -25,4 +25,5 @@
 - [x] Task: Implement syntax validation and auto-correction loop 91a90a5
     - [x] Write Tests: Test error detection and LLM retry logic
     - [x] Implement Feature: Add recovery mechanism in the generation flow
-- [x] Task: Conductor - User Manual Verification 'Phase 3: PNG Export and Error Handling' (Protocol in workflow.md)
+## Phase: Review Fixes
+- [x] Task: Apply review suggestions 9e548e5
