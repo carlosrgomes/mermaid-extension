@@ -16,3 +16,8 @@ This file tracks all major tracks for the project. Each track has its own detail
 
 - [x] **Track: Improve agent integration and tool usage for Mermaid extension by enforcing strict mandates in prompts.**
 *Link: [./tracks/enforce_mermaid_tools_20260416/](./tracks/enforce_mermaid_tools_20260416/)*
+
+---
+
+- [x] **Track: Fix agent loop by enforcing extreme prompt mandates and robust dependency resolution.**
+*Link: [./tracks/extreme_mandates_20260416/](./tracks/extreme_mandates_20260416/)*

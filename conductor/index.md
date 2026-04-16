@@ -1,14 +1,11 @@
-# Project Context
+# Conductor Index
 
-## Definition
+Welcome to Conductor! This file acts as the central hub for resolving all standard project and track paths.
+
+## Project Context
 - [Product Definition](./product.md)
-- [Product Guidelines](./product-guidelines.md)
 - [Tech Stack](./tech-stack.md)
-
-## Workflow
 - [Workflow](./workflow.md)
-- [Code Style Guides](./code_styleguides/)
-
-## Management
+- [Product Guidelines](./product-guidelines.md)
 - [Tracks Registry](./tracks.md)
 - [Tracks Directory](./tracks/)

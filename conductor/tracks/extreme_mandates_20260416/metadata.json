@@ -1,0 +1,8 @@
+{
+  "track_id": "extreme_mandates_20260416",
+  "type": "bug",
+  "status": "completed",
+  "created_at": "2026-04-16T14:40:00Z",
+  "updated_at": "2026-04-16T14:40:00Z",
+  "description": "Fix agent loop by enforcing extreme prompt mandates and robust dependency resolution."
+}
