@@ -13,7 +13,7 @@
 - [x] Task: Initialize MCP Server in src/index.ts 7f0cecc
     - [x] Write Tests: Add a basic test to verify the server instance is exported (if testable)
     - [x] Implement Feature: Setup Server and StdioServerTransport from @modelcontextprotocol/sdk
-- [~] Task: Register Mermaid Tools
-    - [ ] Write Tests: Update tests/scaffold.test.ts to ensure tools are registered correctly
-    - [ ] Implement Feature: Define and handle validate_mermaid_syntax and export_mermaid_to_png in the setRequestHandler block
+- [x] Task: Register Mermaid Tools 11e59b5
+    - [x] Write Tests: Update tests/scaffold.test.ts to ensure tools are registered correctly
+    - [x] Implement Feature: Define and handle validate_mermaid_syntax and export_mermaid_to_png in the setRequestHandler block
 - [ ] Task: Conductor - User Manual Verification 'Phase 2: Implement MCP Server' (Protocol in workflow.md)
