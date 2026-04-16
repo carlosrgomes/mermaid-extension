@@ -1,7 +1,18 @@
 {
   "name": "mermaid-extension",
   "version": "1.0.0",
-  "description": "",
+  "description": "A Gemini CLI extension specialized in creating diagrams and architectures using Mermaid.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/carlosrgomes/mermaid-extension.git"
+  },
+  "keywords": [
+    "gemini-cli-extension",
+    "mcp",
+    "mermaid",
+    "diagrams"
+  ],
+  "homepage": "https://github.com/carlosrgomes/mermaid-extension#readme",
   "main": "index.js",
   "directories": {
     "test": "tests"
