@@ -1,7 +1,7 @@
 {
   "name": "mermaid-extension",
   "version": "1.0.0",
-  "description": "Uma extensão do Gemini CLI especialista em fazer diagramas e arquiteturas usando Mermaid.",
+  "description": "A Gemini CLI extension specialized in creating diagrams and architectures using Mermaid.",
   "mcpServers": [
     {
       "name": "mermaid-server",
