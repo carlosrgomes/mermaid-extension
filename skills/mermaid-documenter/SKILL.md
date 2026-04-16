@@ -56,6 +56,62 @@ When designing a new system:
 | **Quadrant** | Categorizing items into four quadrants based on two axes. |
 | **XY Chart** | Visualizing data trends on X and Y axes. |
 | **Block Diagram** | Simple representation of system components and connections. |
+| **Packet** | Representing network packet structures. |
+| **Kanban** | Visualizing work stages and board layouts. |
+| **Architecture** | High-level service and infrastructure layout. |
+| **Radar** | Comparing multiple quantitative variables. |
+| **Treemap** | Displaying hierarchical data using nested rectangles. |
+| **Venn** | Showing logical relationships between sets. |
+| **Ishikawa** | Cause-and-effect (fishbone) analysis. |
+| **TreeView** | Representing folder or organizational hierarchies. |
+
+## Diagram Examples
+
+### Basic Pie Chart
+```mermaid
+pie title NETFLIX
+    "Time spent looking for movie" : 90
+    "Time spent watching it" : 10
+```
+
+### Basic Sequence Diagram
+```mermaid
+sequenceDiagram
+    Alice ->> Bob: Hello Bob, how are you?
+    Bob-->>John: How about you John?
+    Bob--x Alice: I am good thanks!
+    Bob-x John: I am good thanks!
+    Note right of John: Bob thinks a long<br/>long time, so long<br/>that the text does<br/>not fit on a row.
+
+    Bob-->Alice: Checking with John...
+    Alice->John: Yes... John, how are you?
+```
+
+### Basic Flowchart
+```mermaid
+graph LR
+    A[Square Rect] -- Link text --> B((Circle))
+    A --> C(Round Rect)
+    B --> D{Rhombus}
+    C --> D
+```
+
+### Gitgraph
+```mermaid
+gitGraph:
+    commit "Ashish"
+    branch newbranch
+    checkout newbranch
+    commit id: "1111"
+    commit tag: "test"
+    checkout main
+    commit type: HIGHLIGHT
+    commit
+    merge newbranch
+    commit
+    branch b2
+    commit
+```
 
 ## Instructions for the Agent
 - Always verify your analysis of the codebase before generating a diagram.
