@@ -6,4 +6,8 @@ describe('Index Entry Point', () => {
     expect(index.PngExporter).toBeDefined();
     expect(index.MermaidValidator).toBeDefined();
   });
+
+  it('should export the MCP server instance', () => {
+    expect(index.server).toBeDefined();
+  });
 });

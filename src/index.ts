@@ -10,7 +10,7 @@ import { MermaidValidator } from './validator.js';
 export * from './exporter.js';
 export * from './validator.js';
 
-const server = new Server(
+export const server = new Server(
   {
     name: 'mermaid-extension',
     version: '1.0.0',
