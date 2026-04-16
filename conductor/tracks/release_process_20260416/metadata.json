@@ -1,0 +1,8 @@
+{
+  "track_id": "release_process_20260416",
+  "type": "chore",
+  "status": "new",
+  "created_at": "2026-04-16T10:00:00Z",
+  "updated_at": "2026-04-16T10:00:00Z",
+  "description": "implemente para ele aparecer no gemini extension segue a doc https://geminicli.com/docs/extensions/releasing/"
+}
