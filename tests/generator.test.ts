@@ -17,4 +17,19 @@ describe('MermaidGenerator', () => {
     const result = generator.extractCode(mockResponse);
     expect(result).toBe('graph TD\n  A --> B');
   });
+
+  it('should call the model and return extracted code', async () => {
+    const mockModel = {
+      generateContent: vi.fn().mockResolvedValue({
+        response: {
+          text: () => '```mermaid\ngraph TD\n  A --> B\n```'
+        }
+      })
+    };
+    const generator = new MermaidGenerator(mockModel as any);
+    const result = await generator.generate('test description');
+    
+    expect(mockModel.generateContent).toHaveBeenCalled();
+    expect(result).toBe('graph TD\n  A --> B');
+  });
 });

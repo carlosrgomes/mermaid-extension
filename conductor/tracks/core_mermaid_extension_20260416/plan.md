@@ -13,9 +13,9 @@
 - [x] Task: Create prompt template for Mermaid diagrams 22cb309
     - [x] Write Tests: Unit tests for prompt generation logic
     - [x] Implement Feature: Implement MermaidPromptBuilder
-- [~] Task: Implement LLM caller to generate and extract Mermaid syntax
-    - [ ] Write Tests: Mock LLM response and test Mermaid code extraction
-    - [ ] Implement Feature: Create `MermaidGenerator` service
+- [x] Task: Implement LLM caller to generate and extract Mermaid syntax 89c86ca
+    - [x] Write Tests: Mock LLM response and test Mermaid code extraction
+    - [x] Implement Feature: Create MermaidGenerator service
 - [ ] Task: Conductor - User Manual Verification 'Phase 2: LLM Integration for Mermaid Generation' (Protocol in workflow.md)
 
 ## Phase 3: PNG Export and Error Handling
