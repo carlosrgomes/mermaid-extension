@@ -16,6 +16,8 @@ Developers and architects often need to document systems and workflows using dia
 - **Export to PNG:** Ability to render and export the final diagram to PNG format, saving it to the local disk.
 - **Seamless Integration:** Works as a native Gemini CLI agent (skill or extension), facilitating terminal usage.
 - **Support for Multiple Diagram Types:** Flowcharts, class diagrams, sequence diagrams, and others supported by Mermaid.
+- **Automated Releases:** Continuous delivery via GitHub Actions, automatically packaging and attaching platform-specific archives to GitHub Releases.
+- **Gallery Integration:** Configured for automatic listing in the Gemini CLI public gallery via repository topics.
 
 ## Expected Outcomes
 - Reduced time for documenting projects and architectures.

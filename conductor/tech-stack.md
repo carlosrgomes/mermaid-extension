@@ -12,3 +12,6 @@
 ## Tooling & Quality
 - **Linter & Formatter:** ESLint and Prettier, ensuring standard formatting and code smell detection.
 - **Test Framework:** Vitest for unit tests focused on validating diagram generators and parsing.
+- **CI/CD:** GitHub Actions for automated building, testing, and multi-platform distribution.
+- **Bundler:** `esbuild` for efficient Node.js bundling and distribution.
+- **Packaging:** `shx` for cross-platform file management and archive creation.
