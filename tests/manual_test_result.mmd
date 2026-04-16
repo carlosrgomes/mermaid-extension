@@ -1,0 +1,6 @@
+graph LR
+    A[Start] --> B{Is it working?}
+    B -- Yes --> C[Celebrate]
+    B -- No --> D[Debug]
+    C --> E[End]
+    D --> B
