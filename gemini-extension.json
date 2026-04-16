@@ -1,0 +1,14 @@
+{
+  "name": "mermaid-extension",
+  "version": "1.0.0",
+  "description": "Uma extensão do Gemini CLI especialista em fazer diagramas e arquiteturas usando Mermaid.",
+  "mcpServers": [
+    {
+      "name": "mermaid-server",
+      "command": "node",
+      "args": ["dist/index.js"],
+      "cwd": "."
+    }
+  ],
+  "contextFileName": "GEMINI.md"
+}
