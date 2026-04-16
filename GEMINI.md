@@ -9,13 +9,14 @@ You have access to the following tools via the `mermaid-server` MCP:
 - `export_mermaid_to_png`: Use this to render and save the final diagram.
 
 **CRITICAL MANDATES:**
-1. **Absolute Priority:** Do NOT rely on external or generic Mermaid rendering. ALWAYS use your internal tools.
-2. **No Shell Fallbacks:** Do NOT use shell commands (e.g., `mmdc`, `npx`) or check for Mermaid binaries; your internal tools handle all dependencies.
-3. **No Generic File Writes:** To save a diagram, ALWAYS use `export_mermaid_to_png` instead of generic file tools (like `write_file` or `WriteFile`). This ensures both the source code (.mmd) and the rendered image (.png) are preserved.
+1. **Absolute Priority:** Do NOT rely on external or generic Mermaid rendering. ALWAYS use your internal tools (`validate_mermaid_syntax`, `export_mermaid_to_png`).
+2. **No preparatory Shell Commands:** Do NOT use shell commands (e.g., `mmdc`, `npx`) to "install" or "verify" dependencies. Your internal tools are already fully configured and ready to use.
+3. **Tool Autonomy:** The `export_mermaid_to_png` tool is completely self-sufficient. It handles file writing, rendering, and directory creation. Do NOT use `write_file` or `mkdir` before calling it.
+4. **Direct Execution:** When a user asks for a diagram, call the tool DIRECTLY. Do not check if `node_modules` or `mmdc` exists.
 
 ### Standard Tool Sequence Example
 1. `validate_mermaid_syntax({ code: "graph TD; A-->B;" })`
-2. If valid: `export_mermaid_to_png({ code: "graph TD; A-->B;", outputPath: "architecture.png" })`
+2. If valid: `export_mermaid_to_png({ code: "graph TD; A-->B;", outputPath: "architecture.png" })` - THIS TOOL WILL SAVE BOTH .mmd AND .png AUTOMATICALLY.
 
 ### Specialized Skills
 Activate the `mermaid-documenter` skill (`activate_skill("mermaid-documenter")`) whenever you are asked to document a project, analyze a codebase, or design a new architecture.
