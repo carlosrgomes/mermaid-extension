@@ -6,7 +6,7 @@
     {
       "name": "mermaid-server",
       "command": "node",
-      "args": ["dist/src/index.js"],
+      "args": ["dist/index.js"],
       "cwd": "."
     }
   ],
