@@ -40,7 +40,9 @@ jobs:
         run: npm ci
 
       - name: Package extension
-        run: npm run package
+        run: |
+          npx shx rm -rf dist
+          npm run package
 
       - name: Run tests
         run: npm test
@@ -55,9 +57,10 @@ jobs:
           
           cd dist
           if [ "${{ matrix.platform }}" == "win32" ]; then
-            7z a "../${FILENAME}" *
+            # Use 7z to create zip from current directory contents
+            7z a "../${FILENAME}" .
           else
-            tar -czvf "../${FILENAME}" *
+            tar -czvf "../${FILENAME}" .
           fi
           cd ..
           echo "ASSET_PATH=${FILENAME}" >> $GITHUB_ENV

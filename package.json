@@ -11,7 +11,7 @@
     "lint": "eslint 'src/**/*.ts' 'tests/**/*.ts'",
     "format": "prettier --write 'src/**/*.ts' 'tests/**/*.ts'",
     "build": "tsc",
-    "package": "npm run build && shx cp gemini-extension.json GEMINI.md dist/ && shx cp -R skills dist/"
+    "package": "npm run build && shx mkdir -p dist && shx cp gemini-extension.json GEMINI.md dist/ && shx cp -R skills dist/"
   },
   "keywords": [],
   "author": "",
