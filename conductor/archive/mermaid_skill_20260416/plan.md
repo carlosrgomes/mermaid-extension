@@ -10,3 +10,6 @@
 - [x] Task: Write a test script (e.g., `tests/package.test.ts`) that asserts the `skills/` directory is present in the `dist/src/` build output after packaging (Red Phase).
 - [x] Task: Update the `package` script in `package.json` to include copying the `skills` folder (e.g., `shx cp -R skills dist/src/`) (Green Phase). 9cc890b
 - [x] Task: Conductor - User Manual Verification 'Extension Bundling Configuration' (Protocol in workflow.md) [checkpoint: 0aa84e9]
+
+## Phase: Review Fixes
+- [x] Task: Apply review suggestions a2f23f7
