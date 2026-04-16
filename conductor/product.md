@@ -16,6 +16,7 @@ Developers and architects often need to document systems and workflows using dia
 - **Dual Export (PNG & MMD):** Ability to render the diagram as a PNG and automatically save both the PNG and the original Mermaid source (.mmd) to the local disk.
 - **Seamless Integration:** Works as a native Gemini CLI agent (skill or extension), facilitating terminal usage.
 - **Support for Multiple Diagram Types:** Flowcharts, class diagrams, sequence diagrams, and others supported by Mermaid.
+- **Expert Documentation Support:** Specialized skill bundled with instructions for analyzing legacy and new projects, offering architectural insights across all supported Mermaid diagram types.
 - **Automated Releases:** Continuous delivery via GitHub Actions, automatically packaging and attaching platform-specific archives to GitHub Releases.
 - **Gallery Integration:** Configured for automatic listing in the Gemini CLI public gallery via repository topics.
 
