@@ -11,3 +11,8 @@ This file tracks all major tracks for the project. Each track has its own detail
 
 - [x] **Track: implemente para ele aparecer no gemini extension segue a doc https://geminicli.com/docs/extensions/releasing/**
   *Link: [./tracks/release_process_20260416/](./tracks/release_process_20260416/)*
+
+---
+
+- [ ] **Track: Prepare and finalize Golden Release 1.0.0 for Mermaid Extension**
+*Link: [./tracks/golden_release_20260416/](./tracks/golden_release_20260416/)*
