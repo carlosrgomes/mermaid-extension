@@ -4,6 +4,7 @@ import {
   CallToolRequestSchema,
   ListToolsRequestSchema,
 } from '@modelcontextprotocol/sdk/types.js';
+import path from 'path';
 import { PngExporter } from './exporter.js';
 import { MermaidValidator } from './validator.js';
 
@@ -84,11 +85,15 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
     if (name === 'export_mermaid_to_png') {
       const { code, outputPath } = args as { code: string; outputPath: string };
       await exporter.export(code, outputPath);
+      
+      const parsedPath = path.parse(outputPath);
+      const mmdPath = path.join(parsedPath.dir, `${parsedPath.name}.mmd`);
+
       return {
         content: [
           {
             type: 'text',
-            text: `Successfully exported diagram to ${outputPath}`,
+            text: `Successfully exported diagram to ${outputPath} and ${mmdPath}`,
           },
         ],
       };
