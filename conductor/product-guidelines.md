@@ -1,14 +1,14 @@
 # Product Guidelines
 
 ## UX Principles
-- **CLI-Native Experience:** A experiência deve ser natural para usuários do terminal. Os comandos devem ser simples, auto-descritivos e fáceis de memorizar.
-- **Fail-Safe & Forgiving:** O código Mermaid gerado deve ser auto-corrigido. Se houver falha de sintaxe, a extensão deve tentar reparar antes de acusar erro.
-- **Fast Feedback Loop:** Feedback imediato após a geração ou erro, mantendo o fluxo ininterrupto de desenvolvimento.
+- **CLI-Native Experience:** The experience should feel natural for terminal users. Commands must be simple, self-descriptive, and easy to remember.
+- **Fail-Safe & Forgiving:** Generated Mermaid code should be self-correcting. If a syntax failure occurs, the extension should attempt to repair it before reporting an error.
+- **Fast Feedback Loop:** Provide immediate feedback after generation or error, maintaining an uninterrupted development flow.
 
 ## Prose & Communication Style
-- **Direto e Pragmático:** Focar na ação sem preâmbulos desnecessários ("Diagrama exportado com sucesso em arch.png").
-- **Tom de Colaboração (Staff Engineer Mindset):** Comunicação técnica, profissional, acessível e focada em resolver o problema (o "porquê"), abstraindo as complexidades triviais.
+- **Direct and Pragmatic:** Focus on action without unnecessary preambles ("Diagram successfully exported to arch.png").
+- **Collaboration Tone (Staff Engineer Mindset):** Technical, professional, accessible, and focused on solving the problem (the "why"), abstracting away trivial complexities.
 
 ## Branding & Output Visuals
-- **Exportação de Alta Qualidade:** O PNG resultante deve ser em alta resolução, legível.
-- **Temas Neutros:** Utilizar temas limpos e contrastantes ("default", "neutral" ou "dark") do Mermaid, de forma que o PNG funcione bem em documentações no GitHub ou em apresentações empresariais.
+- **High-Quality Export:** The resulting PNG must be high-resolution and legible.
+- **Neutral Themes:** Use clean and contrasting themes ("default", "neutral", or "dark") so the PNG works well in GitHub documentation or business presentations.

@@ -1,14 +1,14 @@
 # Tech Stack
 
 ## Core Language & Environment
-- **Language:** TypeScript (Strict Mode) - Garante segurança de tipos, aderência ao ecossistema do Gemini CLI e manutenibilidade.
-- **Runtime:** Node.js (compatível com as versões suportadas pelo Gemini CLI).
+- **Language:** TypeScript (Strict Mode) - Ensures type safety, adherence to the Gemini CLI ecosystem, and maintainability.
+- **Runtime:** Node.js (compatible with versions supported by Gemini CLI).
 
 ## Libraries & Dependencies
-- **CLI Extension Framework:** APIs nativas do Gemini CLI para desenvolvimento de extensões (conforme documentação em https://geminicli.com/docs/extensions/writing-extensions/).
-- **Renderização Mermaid:** `@mermaid-js/mermaid-cli` (mmdc) ou um serviço de API externo (como Kroki.io) para converter o texto gerado via LLM em arquivo PNG.
-- **Manipulação de Arquivos:** Módulo nativo `fs/promises` do Node.js para salvar os diagramas localmente.
+- **CLI Extension Framework:** Native Gemini CLI APIs for extension development (as per documentation at https://geminicli.com/docs/extensions/writing-extensions/).
+- **Mermaid Rendering:** `@mermaid-js/mermaid-cli` (mmdc) to convert LLM-generated text into PNG files.
+- **File Manipulation:** Node.js native `fs/promises` module for saving diagrams locally.
 
 ## Tooling & Quality
-- **Linter & Formatter:** ESLint e Prettier, garantindo formatação padrão e detecção de code smells.
-- **Test Framework:** Vitest ou Jest para testes unitários focados na validação dos geradores de diagramas e parsing.
+- **Linter & Formatter:** ESLint and Prettier, ensuring standard formatting and code smell detection.
+- **Test Framework:** Vitest for unit tests focused on validating diagram generators and parsing.
