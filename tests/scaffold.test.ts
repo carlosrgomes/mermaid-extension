@@ -1,7 +1,11 @@
 import { describe, it, expect } from 'vitest';
+import * as index from '../src/index.js';
 
-describe('Scaffold', () => {
-  it('should confirm test environment is active', () => {
-    expect(true).toBe(true);
+describe('Index Entry Point', () => {
+  it('should export all services', () => {
+    expect(index.MermaidGenerator).toBeDefined();
+    expect(index.PngExporter).toBeDefined();
+    expect(index.MermaidValidator).toBeDefined();
+    expect(index.MermaidPromptBuilder).toBeDefined();
   });
 });
