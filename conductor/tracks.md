@@ -14,5 +14,5 @@ This file tracks all major tracks for the project. Each track has its own detail
 
 ---
 
-- [ ] **Track: implemente salvar o arquivo original mermaid e png sempre vai ter os 2**
+- [x] **Track: implemente salvar o arquivo original mermaid e png sempre vai ter os 2**
   *Link: [./tracks/save_mmd_and_png_20260416/](./tracks/save_mmd_and_png_20260416/)*
