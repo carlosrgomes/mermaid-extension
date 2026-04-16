@@ -5,7 +5,7 @@
 - [x] Task: Run `npm run lint` and `npm run format` to ensure code style compliance. 3361d68
 - [x] Task: Run `npm test` to confirm 100% test pass rate for all unit and integration tests. 9fca3eb
 - [x] Task: Run `npm run package` to generate the `dist/` directory and ensure it contains all required assets (`index.js`, `GEMINI.md`, `gemini-extension.json`, and `skills/`). 56683fb
-- [ ] Task: Perform manual validation of the extension within the Gemini CLI environment (e.g., validate a flowchart, export a sequence diagram).
+- [x] Task: Perform manual validation of the extension within the Gemini CLI environment (e.g., validate a flowchart, export a sequence diagram). 6dc2a7c
 - [ ] Task: Conductor - User Manual Verification 'End-to-End Validation & Build Verification' (Protocol in workflow.md)
 
 ## Phase 2: Distribution and Final Release
