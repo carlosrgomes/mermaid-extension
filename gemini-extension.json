@@ -10,5 +10,15 @@
       "cwd": "."
     }
   ],
+  "tools": [
+    {
+      "name": "validate_mermaid_syntax",
+      "description": "Validates Mermaid diagram syntax to ensure it is correct before rendering."
+    },
+    {
+      "name": "export_mermaid_to_png",
+      "description": "Renders Mermaid code into a PNG file and also saves the source .mmd file."
+    }
+  ],
   "contextFileName": "GEMINI.md"
 }
