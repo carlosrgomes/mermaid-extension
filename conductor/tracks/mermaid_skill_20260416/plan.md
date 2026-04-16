@@ -1,8 +1,8 @@
 # Implementation Plan: Mermaid Documentation Specialist Skill
 
 ## Phase 1: Skill Drafting (SKILL.md)
-- [ ] Task: Create the directory `skills/mermaid-documenter`.
-- [ ] Task: Draft the initial content for `skills/mermaid-documenter/SKILL.md` in English. Include structured strategies for analyzing legacy codebases and designing new projects.
+- [x] Task: Create the directory `skills/mermaid-documenter`. b38891e
+- [~] Task: Draft the initial content for `skills/mermaid-documenter/SKILL.md` in English. Include structured strategies for analyzing legacy codebases and designing new projects.
 - [ ] Task: Append an exhaustive list of all supported Mermaid diagram types (Flowchart, Sequence, Class, State, ER, User Journey, Gantt, Pie, Requirement, Gitgraph, C4, Mindmap, Timeline, Zenuml, Sankey, Quadrant, XY Chart, Block) with their usage contexts to the `SKILL.md`.
 - [ ] Task: Conductor - User Manual Verification 'Skill Drafting (SKILL.md)' (Protocol in workflow.md)
 
