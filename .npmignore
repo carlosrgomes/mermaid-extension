@@ -1,0 +1,27 @@
+# Dependencies
+node_modules/
+
+# Source
+src/
+tsconfig.json
+
+# Tests
+tests/
+coverage/
+
+# Project Management (Conductor)
+conductor/
+
+# Git
+.git/
+.github/
+.gitignore
+
+# Config
+.eslintrc.json
+.prettierrc
+scripts/
+
+# Other
+*.mmd
+*.png
