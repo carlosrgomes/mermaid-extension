@@ -1,0 +1,12 @@
+# Implementation Plan: Save Mermaid Source and PNG
+
+## Phase 1: Update Exporter Logic
+- [ ] Task: Write failing tests in `tests/exporter.test.ts` to verify that a `.mmd` file is created alongside the `.png` file.
+- [ ] Task: Modify `src/exporter.ts` to parse the `outputPath`, change the extension to `.mmd`, and write the `mermaidCode` to this new path before or after generating the PNG.
+- [ ] Task: Verify that all tests pass and coverage is > 80%.
+- [ ] Task: Conductor - User Manual Verification 'Update Exporter Logic' (Protocol in workflow.md)
+
+## Phase 2: Update Server Output Message
+- [ ] Task: Write or update integration tests (if applicable) to verify the new success message.
+- [ ] Task: Modify `src/index.ts` in the `export_mermaid_to_png` handler to reflect that both files were saved in the return message.
+- [ ] Task: Conductor - User Manual Verification 'Update Server Output Message' (Protocol in workflow.md)
