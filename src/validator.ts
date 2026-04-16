@@ -20,11 +20,25 @@ export class MermaidValidator {
     try {
       await fs.writeFile(inputPath, mermaidCode, 'utf-8');
 
-      const localMmdc = path.resolve(process.cwd(), 'node_modules/.bin/mmdc');
-      const bin = await fs
-        .access(localMmdc)
-        .then(() => localMmdc)
-        .catch(() => 'npx');
+      const __dirname = path.dirname(new URL(import.meta.url).pathname);
+      const possibleMmdcPaths = [
+        path.resolve(__dirname, '../node_modules/.bin/mmdc'),
+        path.resolve(__dirname, '../../node_modules/.bin/mmdc'), // For dist/
+        path.resolve(process.cwd(), 'node_modules/.bin/mmdc'),
+      ];
+
+      let localMmdc: string | undefined;
+      for (const p of possibleMmdcPaths) {
+        try {
+          await fs.access(p);
+          localMmdc = p;
+          break;
+        } catch {
+          continue;
+        }
+      }
+
+      const bin = localMmdc || 'npx';
       const args =
         bin === 'npx'
           ? ['mmdc', '-i', inputPath, '-o', outputPath]

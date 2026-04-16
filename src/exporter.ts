@@ -33,12 +33,26 @@ export class PngExporter {
       // Save to temp file for rendering
       await fs.writeFile(tempInputPath, mermaidCode, 'utf-8');
 
-      // Prefer local bin/mmdc over npx for performance and offline capability
-      const localMmdc = path.resolve(process.cwd(), 'node_modules/.bin/mmdc');
-      const bin = await fs
-        .access(localMmdc)
-        .then(() => localMmdc)
-        .catch(() => 'npx');
+      // Robust path resolution for mmdc
+      const __dirname = path.dirname(new URL(import.meta.url).pathname);
+      const possibleMmdcPaths = [
+        path.resolve(__dirname, '../node_modules/.bin/mmdc'),
+        path.resolve(__dirname, '../../node_modules/.bin/mmdc'), // For dist/
+        path.resolve(process.cwd(), 'node_modules/.bin/mmdc'),
+      ];
+
+      let localMmdc: string | undefined;
+      for (const p of possibleMmdcPaths) {
+        try {
+          await fs.access(p);
+          localMmdc = p;
+          break;
+        } catch {
+          continue;
+        }
+      }
+
+      const bin = localMmdc || 'npx';
       const args =
         bin === 'npx'
           ? ['mmdc', '-i', tempInputPath, '-o', absolutePngPath]
