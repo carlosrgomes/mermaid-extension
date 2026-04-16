@@ -14,5 +14,5 @@ This file tracks all major tracks for the project. Each track has its own detail
 
 ---
 
-- [ ] **Track: crie uma skill especialista em documentacao com mermaid especialista em analisar projetos legados e novos usando inclua todos os diagramas suportados pelo mermaid e deve ser em ingles e vir direto na extencao**
+- [x] **Track: crie uma skill especialista em documentacao com mermaid especialista em analisar projetos legados e novos usando inclua todos os diagramas suportados pelo mermaid e deve ser em ingles e vir direto na extencao**
   *Link: [./tracks/mermaid_skill_20260416/](./tracks/mermaid_skill_20260416/)*
