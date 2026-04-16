@@ -1,10 +1,10 @@
 # Implementation Plan
 
 ## Phase 1: Setup and Clean Up
-- [ ] Task: Install @modelcontextprotocol/sdk
-    - [ ] Write Tests: (No specific test needed for dependency addition)
-    - [ ] Implement Feature: Update package.json with the new dependency
-- [ ] Task: Remove redundant MermaidGenerator and LLM SDK
+- [x] Task: Install @modelcontextprotocol/sdk 192c665
+    - [x] Write Tests: (No specific test needed for dependency addition)
+    - [x] Implement Feature: Update package.json with the new dependency
+- [~] Task: Remove redundant MermaidGenerator and LLM SDK
     - [ ] Write Tests: Delete tests/generator.test.ts and tests/recovery.test.ts
     - [ ] Implement Feature: Remove @google/generative-ai from package.json and delete src/generator.ts and src/promptBuilder.ts
 - [ ] Task: Conductor - User Manual Verification 'Phase 1: Setup and Clean Up' (Protocol in workflow.md)
