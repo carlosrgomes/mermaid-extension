@@ -9,14 +9,14 @@
     - [x] Implement Feature: Create main entry point and basic command structure
 - [x] Task: Conductor - User Manual Verification 'Phase 1: Project Scaffolding' (Protocol in workflow.md)
 
-## Phase 2: LLM Integration for Mermaid Generation
+## Phase 2: LLM Integration for Mermaid Generation [checkpoint: b015c340]
 - [x] Task: Create prompt template for Mermaid diagrams 22cb309
     - [x] Write Tests: Unit tests for prompt generation logic
     - [x] Implement Feature: Implement MermaidPromptBuilder
 - [x] Task: Implement LLM caller to generate and extract Mermaid syntax 89c86ca
     - [x] Write Tests: Mock LLM response and test Mermaid code extraction
     - [x] Implement Feature: Create MermaidGenerator service
-- [ ] Task: Conductor - User Manual Verification 'Phase 2: LLM Integration for Mermaid Generation' (Protocol in workflow.md)
+- [x] Task: Conductor - User Manual Verification 'Phase 2: LLM Integration for Mermaid Generation' (Protocol in workflow.md)
 
 ## Phase 3: PNG Export and Error Handling
 - [ ] Task: Integrate Mermaid CLI for rendering PNG
