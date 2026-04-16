@@ -13,3 +13,6 @@ This file tracks all major tracks for the project. Each track has its own detail
   *Link: [./tracks/release_process_20260416/](./tracks/release_process_20260416/)*
 
 ---
+
+- [ ] **Track: Improve agent integration and tool usage for Mermaid extension by enforcing strict mandates in prompts.**
+*Link: [./tracks/enforce_mermaid_tools_20260416/](./tracks/enforce_mermaid_tools_20260416/)*
