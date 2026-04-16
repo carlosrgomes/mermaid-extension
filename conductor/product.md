@@ -13,7 +13,7 @@ Developers and architects often need to document systems and workflows using dia
 
 ## Key Features
 - **Automatic Mermaid Generation:** The extension will interpret user requirements and generate valid Mermaid code.
-- **Export to PNG:** Ability to render and export the final diagram to PNG format, saving it to the local disk.
+- **Dual Export (PNG & MMD):** Ability to render the diagram as a PNG and automatically save both the PNG and the original Mermaid source (.mmd) to the local disk.
 - **Seamless Integration:** Works as a native Gemini CLI agent (skill or extension), facilitating terminal usage.
 - **Support for Multiple Diagram Types:** Flowcharts, class diagrams, sequence diagrams, and others supported by Mermaid.
 - **Automated Releases:** Continuous delivery via GitHub Actions, automatically packaging and attaching platform-specific archives to GitHub Releases.
