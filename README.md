@@ -4,47 +4,44 @@
 
 The **Mermaid Extension** is a specialized Gemini CLI tool designed for developers and architects who want to document systems, workflows, and architectures using **Diagrams as Code**. It interprets natural language requirements to generate, validate, and export high-quality Mermaid diagrams directly from your terminal.
 
-## 🚀 Key Features
+## 🎯 Objective
 
-- **Natural Language to Diagram:** Transform your ideas into valid Mermaid syntax automatically.
+The core problem this extension solves is the friction between architectural design and documentation. Manually creating diagrams often requires external tools outside of the terminal workflow. The Mermaid Extension bridges this gap by:
+- **Reducing documentation time:** Transform ideas into visual representations in seconds.
+- **Increasing quality & standardization:** Generate valid Mermaid code automatically.
+- **Providing a "Vibe Coding" experience:** Document architecture interactively without leaving your development environment.
+
+## 🛠 Architecture (C4 Model)
+
+The extension operates as an **MCP (Model Context Protocol) Server**, providing a standardized interface for Gemini CLI to interact with local rendering tools.
+
+![Architecture Diagram](architecture.png)
+
+### Core Components:
+- **MCP Server (index.ts)**: The entry point that manages tool registration (`validate_mermaid_syntax`, `export_mermaid_to_png`) and routes requests via JSON-RPC (Stdio).
+- **Mermaid Validator (validator.ts)**: A TypeScript module that performs syntax checks by invoking the Mermaid CLI (`mmdc`) in a temporary environment.
+- **PNG Exporter (exporter.ts)**: Handles the rendering process, ensuring both the **PNG** image and the **Mermaid source (.mmd)** are saved to the local disk.
+
+## 💻 Tech Stack
+
+- **Language:** TypeScript (Strict Mode) for type safety and maintainability.
+- **Runtime:** Node.js (ESM - ECMAScript Modules).
+- **Protocol:** [@modelcontextprotocol/sdk](https://github.com/modelcontextprotocol/sdk) for tool integration.
+- **Rendering Engine:** [@mermaid-js/mermaid-cli](https://github.com/mermaid-js/mermaid-cli) (mmdc).
+- **Testing:** Vitest for unit and integration testing.
+- **CI/CD:** GitHub Actions for automated building, testing, and multi-platform distribution.
+
+## ✨ Key Features
+
+- **Natural Language to Diagram:** Transform user requirements into valid Mermaid syntax automatically.
 - **Dual Export:** Generates both the **PNG** image and the **Mermaid source (.mmd)** file for easy version control.
-- **Syntax Validation:** Built-in validation using the official Mermaid CLI to ensure your diagrams are always correct.
-- **Support for All Diagram Types:** Flowcharts, Sequence Diagrams, Class Diagrams, ER Diagrams, Gantt Charts, C4 Diagrams, and more.
-- **Vibe Coding Experience:** Document your architecture interactively without leaving your development environment.
-
-## 🛠 Architecture
-
-The extension operates as an **MCP (Model Context Protocol) Server**, bridging the gap between Gemini's intelligence and the local filesystem tools.
-
-```mermaid
-graph TD
-    User([User]) <--> GeminiCLI[Gemini CLI]
-    GeminiCLI <--> MCPServer[Mermaid MCP Server]
-    
-    subgraph "MCP Server Logic"
-        MCPServer --> Validator[Mermaid Validator]
-        MCPServer --> Exporter[PNG Exporter]
-    end
-    
-    subgraph "External Tools"
-        Validator --> MMDC[npx mmdc]
-        Exporter --> MMDC
-    end
-    
-    subgraph "Local Output"
-        Exporter --> PNG[Result.png]
-        Exporter --> MMD[Source.mmd]
-    end
-    
-    style User fill:#f9f,stroke:#333,stroke-width:2px
-    style GeminiCLI fill:#bbf,stroke:#333,stroke-width:2px
-    style MCPServer fill:#bfb,stroke:#333,stroke-width:2px
-    style MMDC fill:#fbb,stroke:#333,stroke-width:2px
-```
+- **Syntax Validation:** Built-in validation to ensure diagrams are always correct before rendering.
+- **Support for All Diagram Types:** Flowcharts, Sequence Diagrams, Class Diagrams, ER Diagrams, C4 Diagrams, Gantt Charts, and more.
+- **Specialized Documentation Skill:** Bundled with the **Mermaid Documentation Specialist** skill (`skills/mermaid-documenter/SKILL.md`) for expert architectural insights.
 
 ## 📦 Installation
 
-To install the extension in your Gemini CLI, follow these steps:
+To install the extension in your Gemini CLI:
 
 1.  **Clone the repository:**
     ```bash
@@ -68,44 +65,28 @@ To install the extension in your Gemini CLI, follow these steps:
     gemini extensions list
     ```
 
-## 💡 Usage Examples
+## 💡 Usage Guide
 
-Once installed, you can ask Gemini to create diagrams for you.
+Once installed, you can interact with the extension using natural language or by calling its tools directly.
 
-### 1. Generating a Flowchart
-> "Create a flowchart showing the authentication process: Login -> Check Credentials -> MFA -> Success or Failure."
+### Natural Language Examples:
+- *"Create a flowchart showing the authentication process: Login -> Check Credentials -> MFA -> Success or Failure."*
+- *"Analyze my `src/` folder and create a class diagram of the main components. Save it as `architecture.png`."*
 
-### 2. Exporting Architecture to PNG
-> "Analyze my `src/` folder and create a class diagram of the main components. Save it to `./docs/architecture.png`."
-
-### 3. Manual Tool Usage
-The extension exposes two primary tools:
+### Manual Tool Calls:
 - `validate_mermaid_syntax(code: string)`: Checks if your Mermaid code is valid.
 - `export_mermaid_to_png(code: string, outputPath: string)`: Renders the diagram and saves files.
 
-## 📂 Bundled Skills
-
-The extension comes with the **Mermaid Documentation Specialist** skill (`skills/mermaid-documenter/SKILL.md`), which instructs Gemini on:
-- Best practices for project analysis (legacy vs. new).
-- Selecting the right diagram type for the context.
-- Maintaining consistent English documentation.
-
 ## 🧪 Development
 
-### Running Tests
-```bash
-npm test
-```
+### Scripts:
+- **Test:** `npm test` (Uses Vitest)
+- **Build:** `npm run build` (Uses `tsc`)
+- **Lint:** `npm run lint` (Uses ESLint)
+- **Format:** `npm run format` (Uses Prettier)
 
-### Linting & Formatting
-```bash
-npm run lint
-npm run format
-```
-
-## 📄 License
-
-This project is licensed under the ISC License - see the [LICENSE](LICENSE) file for details.
+### Automated Releases:
+Continuous delivery is handled via GitHub Actions. On every release, the project is packaged and attached to the GitHub Release page as a platform-specific archive.
 
 ---
 Built with ❤️ by the Gemini CLI Community.

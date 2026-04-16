@@ -1,0 +1,22 @@
+C4Container
+    title Container Diagram for Mermaid Extension
+
+    Person(user, "Software Engineer", "Uses natural language to request diagrams.")
+
+    System_Boundary(c1, "Mermaid Extension (MCP Server)") {
+        Container(mcp_server, "MCP Server", "TypeScript / Node.js", "Entry point; manages tool registration and request routing.")
+        Container(validator, "Mermaid Validator", "TypeScript", "Validates Mermaid syntax by invoking the CLI.")
+        Container(exporter, "PNG Exporter", "TypeScript", "Renders diagrams to PNG and saves source MMD files.")
+    }
+
+    System_Ext(gemini_cli, "Gemini CLI", "The host environment providing the AI interface.")
+    System_Ext(mermaid_cli, "Mermaid CLI (mmdc)", "External tool for rendering diagrams.")
+    System_Ext(file_system, "Local File System", "Storage for project files and generated artifacts.")
+
+    Rel(user, gemini_cli, "Asks for diagrams", "CLI")
+    Rel(gemini_cli, mcp_server, "Invokes MCP tools", "JSON-RPC (Stdio)")
+    Rel(mcp_server, validator, "Uses", "Internal Call")
+    Rel(mcp_server, exporter, "Uses", "Internal Call")
+    Rel(validator, mermaid_cli, "Validates syntax via", "Shell/mmdc")
+    Rel(exporter, mermaid_cli, "Renders images via", "Shell/mmdc")
+    Rel(exporter, file_system, "Writes PNG and MMD to", "FS API")
