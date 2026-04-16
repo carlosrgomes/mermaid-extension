@@ -7,7 +7,7 @@
     "test": "tests"
   },
   "scripts": {
-    "test": "vitest run tests/*.test.ts",
+    "test": "vitest run",
     "lint": "eslint 'src/**/*.ts' 'tests/**/*.ts'",
     "format": "prettier --write 'src/**/*.ts' 'tests/**/*.ts'",
     "build": "tsc",
