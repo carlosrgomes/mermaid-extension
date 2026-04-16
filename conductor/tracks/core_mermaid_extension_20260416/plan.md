@@ -19,7 +19,7 @@
 - [x] Task: Conductor - User Manual Verification 'Phase 2: LLM Integration for Mermaid Generation' (Protocol in workflow.md)
 
 ## Phase 3: PNG Export and Error Handling
-- [ ] Task: Integrate Mermaid CLI for rendering PNG
+- [~] Task: Integrate Mermaid CLI for rendering PNG
     - [ ] Write Tests: Unit tests for rendering function using dummy Mermaid strings
     - [ ] Implement Feature: Implement `PngExporter` using `@mermaid-js/mermaid-cli`
 - [ ] Task: Implement syntax validation and auto-correction loop
