@@ -116,5 +116,5 @@ gitGraph:
 ## Instructions for the Agent
 - Always verify your analysis of the codebase before generating a diagram.
 - When generating a diagram, ensure you use the `validate_mermaid_syntax` tool before presenting it or saving it.
-- Use the `export_mermaid_to_png` tool to provide a visual artifact to the user.
+- **CRITICAL:** Whenever you generate a diagram for a project file (e.g., README.md, ARCHITECTURE.md), you MUST also call `export_mermaid_to_png` to create a corresponding PNG image. Provide the PNG path in the document if appropriate.
 - Prefer the **Neutral** theme for all diagrams unless otherwise requested.
