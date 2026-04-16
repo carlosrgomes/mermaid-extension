@@ -7,16 +7,16 @@
     "test": "tests"
   },
   "scripts": {
-    "test": "vitest run",
+    "test": "vitest run tests/*.test.ts",
     "lint": "eslint 'src/**/*.ts' 'tests/**/*.ts'",
     "format": "prettier --write 'src/**/*.ts' 'tests/**/*.ts'",
-    "build": "esbuild src/index.ts --bundle --platform=node --target=node20 --outfile=dist/index.js",
-    "package": "npm run build && shx cp gemini-extension.json GEMINI.md dist/"
+    "build": "tsc",
+    "package": "npm run build && shx cp gemini-extension.json GEMINI.md dist/src/"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
+  "type": "module",
   "devDependencies": {
     "@mermaid-js/mermaid-cli": "^11.12.0",
     "@types/node": "^25.6.0",
