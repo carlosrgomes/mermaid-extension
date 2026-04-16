@@ -10,7 +10,7 @@
 - [x] Task: Conductor - User Manual Verification 'Phase 1: Project Scaffolding' (Protocol in workflow.md)
 
 ## Phase 2: LLM Integration for Mermaid Generation
-- [ ] Task: Create prompt template for Mermaid diagrams
+- [~] Task: Create prompt template for Mermaid diagrams
     - [ ] Write Tests: Unit tests for prompt generation logic
     - [ ] Implement Feature: Implement `MermaidPromptBuilder`
 - [ ] Task: Implement LLM caller to generate and extract Mermaid syntax
