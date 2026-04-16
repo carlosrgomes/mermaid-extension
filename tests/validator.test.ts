@@ -3,7 +3,7 @@ import { MermaidValidator } from '../src/validator.js';
 import { execFile } from 'child_process';
 
 vi.mock('child_process', () => ({
-  execFile: vi.fn((cmd, args, cb) => cb(null, { stdout: '', stderr: '' }))
+  execFile: vi.fn((cmd, args, cb) => cb(null, { stdout: '', stderr: '' })),
 }));
 
 describe('MermaidValidator', () => {
@@ -14,10 +14,20 @@ describe('MermaidValidator', () => {
   });
 
   it('should return valid false when mmdc fails', async () => {
-    const error: any = new Error('Command failed');
+    const error = new Error('Command failed') as Error & { stderr: string };
     error.stderr = 'Syntax Error';
-    vi.mocked(execFile).mockImplementationOnce((cmd, args, cb: any) => 
-      cb(error, { stdout: '', stderr: 'Syntax Error' })
+    vi.mocked(execFile).mockImplementationOnce(
+      (
+        cmd: string,
+        args: readonly string[] | undefined | null,
+        cb: unknown,
+      ) => {
+        const callback = cb as (
+          err: Error | null,
+          res: { stdout: string; stderr: string },
+        ) => void;
+        callback(error, { stdout: '', stderr: 'Syntax Error' });
+      },
     );
     const validator = new MermaidValidator();
     const result = await validator.validate('invalid syntax');

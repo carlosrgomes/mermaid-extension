@@ -16,13 +16,25 @@ export class MermaidValidator {
     const tempDir = await fs.mkdtemp(path.join(os.tmpdir(), 'mermaid-val-'));
     const inputPath = path.join(tempDir, 'input.mmd');
     const outputPath = path.join(tempDir, 'output.svg'); // Just to verify it can render
-    
+
     try {
       await fs.writeFile(inputPath, mermaidCode, 'utf-8');
-      await execFileAsync('npx', ['mmdc', '-i', inputPath, '-o', outputPath]);
+
+      const localMmdc = path.resolve(process.cwd(), 'node_modules/.bin/mmdc');
+      const bin = await fs
+        .access(localMmdc)
+        .then(() => localMmdc)
+        .catch(() => 'npx');
+      const args =
+        bin === 'npx'
+          ? ['mmdc', '-i', inputPath, '-o', outputPath]
+          : ['-i', inputPath, '-o', outputPath];
+
+      await execFileAsync(bin, args);
       return { isValid: true };
-    } catch (error: any) {
-      return { isValid: false, error: error.stderr || error.message };
+    } catch (error: unknown) {
+      const err = error as { stderr?: string; message: string };
+      return { isValid: false, error: err.stderr || err.message };
     } finally {
       await fs.rm(tempDir, { recursive: true, force: true });
     }

@@ -14,5 +14,5 @@ This file tracks all major tracks for the project. Each track has its own detail
 
 ---
 
-- [ ] **Track: Prepare and finalize Golden Release 1.0.0 for Mermaid Extension**
+- [~] **Track: Prepare and finalize Golden Release 1.0.0 for Mermaid Extension**
 *Link: [./tracks/golden_release_20260416/](./tracks/golden_release_20260416/)*

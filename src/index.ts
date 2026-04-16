@@ -4,7 +4,6 @@ import {
   CallToolRequestSchema,
   ListToolsRequestSchema,
 } from '@modelcontextprotocol/sdk/types.js';
-import path from 'path';
 import { PngExporter } from './exporter.js';
 import { MermaidValidator } from './validator.js';
 
@@ -71,6 +70,20 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
   try {
     if (name === 'validate_mermaid_syntax') {
       const { code } = args as { code: string };
+      if (!code || code.trim() === '') {
+        return {
+          content: [
+            {
+              type: 'text',
+              text: JSON.stringify(
+                { isValid: false, error: 'Mermaid code cannot be empty.' },
+                null,
+                2,
+              ),
+            },
+          ],
+        };
+      }
       const result = await validator.validate(code);
       return {
         content: [
@@ -84,28 +97,29 @@ server.setRequestHandler(CallToolRequestSchema, async (request) => {
 
     if (name === 'export_mermaid_to_png') {
       const { code, outputPath } = args as { code: string; outputPath: string };
-      await exporter.export(code, outputPath);
-      
-      const parsedPath = path.parse(outputPath);
-      const mmdPath = path.join(parsedPath.dir, `${parsedPath.name}.mmd`);
+      if (!code || code.trim() === '') {
+        throw new Error('Mermaid code cannot be empty.');
+      }
+      const { pngPath, mmdPath } = await exporter.export(code, outputPath);
 
       return {
         content: [
           {
             type: 'text',
-            text: `Successfully exported diagram to ${outputPath} and ${mmdPath}`,
+            text: `Successfully exported diagram to ${pngPath} and ${mmdPath}`,
           },
         ],
       };
     }
 
     throw new Error(`Tool not found: ${name}`);
-  } catch (error: any) {
+  } catch (error) {
+    const errorMessage = error instanceof Error ? error.message : String(error);
     return {
       content: [
         {
           type: 'text',
-          text: `Error: ${error.message}`,
+          text: `Error: ${errorMessage}`,
         },
       ],
       isError: true,
