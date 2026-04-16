@@ -1,10 +1,10 @@
-import { exec } from 'child_process';
+import { execFile } from 'child_process';
 import { promisify } from 'util';
 import fs from 'fs/promises';
 import path from 'path';
 import os from 'os';
 
-const execAsync = promisify(exec);
+const execFileAsync = promisify(execFile);
 
 export class PngExporter {
   async export(mermaidCode: string, outputPath: string): Promise<void> {
@@ -14,8 +14,7 @@ export class PngExporter {
     try {
       await fs.writeFile(inputPath, mermaidCode, 'utf-8');
       // Using npx to ensure mmdc is available from node_modules
-      const command = `npx mmdc -i ${inputPath} -o ${outputPath}`;
-      await execAsync(command);
+      await execFileAsync('npx', ['mmdc', '-i', inputPath, '-o', outputPath]);
     } finally {
       await fs.rm(tempDir, { recursive: true, force: true });
     }

@@ -1,9 +1,9 @@
 import { describe, it, expect, vi } from 'vitest';
 import { PngExporter } from '../src/exporter.js';
-import { exec } from 'child_process';
+import { execFile } from 'child_process';
 
 vi.mock('child_process', () => ({
-  exec: vi.fn((cmd, cb) => cb(null, { stdout: '', stderr: '' }))
+  execFile: vi.fn((cmd, args, cb) => cb(null, { stdout: '', stderr: '' }))
 }));
 
 describe('PngExporter', () => {
@@ -14,11 +14,12 @@ describe('PngExporter', () => {
     
     await exporter.export(mermaidCode, outputPath);
     
-    expect(exec).toHaveBeenCalled();
-    const call = vi.mocked(exec).mock.calls[0];
-    expect(call[0]).toContain('mmdc');
-    expect(call[0]).toContain('-i');
-    expect(call[0]).toContain('-o');
-    expect(call[0]).toContain(outputPath);
+    expect(execFile).toHaveBeenCalled();
+    const call = vi.mocked(execFile).mock.calls[0];
+    expect(call[0]).toBe('npx');
+    expect(call[1]).toContain('mmdc');
+    expect(call[1]).toContain('-i');
+    expect(call[1]).toContain('-o');
+    expect(call[1]).toContain(outputPath);
   });
 });

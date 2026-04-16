@@ -1,10 +1,10 @@
-import { exec } from 'child_process';
+import { execFile } from 'child_process';
 import { promisify } from 'util';
 import fs from 'fs/promises';
 import path from 'path';
 import os from 'os';
 
-const execAsync = promisify(exec);
+const execFileAsync = promisify(execFile);
 
 export interface ValidationResult {
   isValid: boolean;
@@ -19,8 +19,7 @@ export class MermaidValidator {
     
     try {
       await fs.writeFile(inputPath, mermaidCode, 'utf-8');
-      const command = `npx mmdc -i ${inputPath} -o ${outputPath}`;
-      await execAsync(command);
+      await execFileAsync('npx', ['mmdc', '-i', inputPath, '-o', outputPath]);
       return { isValid: true };
     } catch (error: any) {
       return { isValid: false, error: error.stderr || error.message };

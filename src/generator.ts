@@ -4,8 +4,8 @@ import { MermaidValidator } from './validator.js';
 
 export class MermaidGenerator {
   constructor(
-    private model: GenerativeModel,
-    private validator?: MermaidValidator
+    private readonly model: GenerativeModel,
+    private readonly validator?: MermaidValidator
   ) {}
 
   async generate(description: string, maxRetries = 2): Promise<string> {

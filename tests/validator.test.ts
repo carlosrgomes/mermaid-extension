@@ -1,9 +1,9 @@
 import { describe, it, expect, vi } from 'vitest';
 import { MermaidValidator } from '../src/validator.js';
-import { exec } from 'child_process';
+import { execFile } from 'child_process';
 
 vi.mock('child_process', () => ({
-  exec: vi.fn((cmd, cb) => cb(null, { stdout: '', stderr: '' }))
+  execFile: vi.fn((cmd, args, cb) => cb(null, { stdout: '', stderr: '' }))
 }));
 
 describe('MermaidValidator', () => {
@@ -16,7 +16,7 @@ describe('MermaidValidator', () => {
   it('should return valid false when mmdc fails', async () => {
     const error: any = new Error('Command failed');
     error.stderr = 'Syntax Error';
-    vi.mocked(exec).mockImplementationOnce((cmd, cb: any) => 
+    vi.mocked(execFile).mockImplementationOnce((cmd, args, cb: any) => 
       cb(error, { stdout: '', stderr: 'Syntax Error' })
     );
     const validator = new MermaidValidator();
